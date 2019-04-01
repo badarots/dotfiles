@@ -1,0 +1,10 @@
+set tabsize 4
+set tabstospaces
+set linenumbers
+set suspend
+set historylog
+set softwrap
+#set atblanks
+set autoindent
+set smooth
+include "/usr/share/nano-syntax-highlighting/*.nanorc"
