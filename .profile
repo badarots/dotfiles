@@ -1,4 +1,4 @@
-export EDITOR=micro
+export EDITOR=nano
 export VISUAL="$EDITOR"
 export PATH="${PATH}:/opt/anaconda/bin"
 alias lh='ls -lh'

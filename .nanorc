@@ -7,4 +7,4 @@ set softwrap
 #set atblanks
 set autoindent
 set smooth
-include "/usr/share/nano-syntax-highlighting/*.nanorc"
+include "/usr/share/*.nanorc"
