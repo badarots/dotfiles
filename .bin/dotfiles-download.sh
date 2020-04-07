@@ -2,7 +2,7 @@ git clone --bare https://github.com/badarot/dotfiles.git $HOME/.cfg
 function dotfiles {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
-mkdir -p .config-backup
+mkdir -p .dotfiles.bk
 dotfiles checkout
 if [ $? = 0 ]; then
     echo "Checked out config.";
@@ -12,4 +12,4 @@ else
 fi;
 dotfiles checkout
 dotfiles config status.showUntrackedFiles no
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.profile
+# echo "alias dotfiles='/usr/bin/git --git-dir=$HOME.dotfiles/ --work-tree=$HOME'" >> $HOME/.profile
