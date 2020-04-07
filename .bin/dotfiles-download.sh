@@ -1,3 +1,6 @@
+# Para baixar isso aqui execute o sequinte
+# curl -Lks https://raw.githubusercontent.com/badarot/dotfiles/master/.bin/dotfiles-download.sh | /bin/bash
+
 git clone --bare https://github.com/badarot/dotfiles.git $HOME/.dotfiles
 function dotfiles {
     /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
@@ -12,4 +15,3 @@ else
 fi;
 dotfiles checkout
 dotfiles config status.showUntrackedFiles no
-# echo "alias dotfiles='/usr/bin/git --git-dir=$HOME.dotfiles/ --work-tree=$HOME'" >> $HOME/.profile
