@@ -1,4 +1,11 @@
 {
+    /*  Extensions
+    GitLens
+    C/C++
+    Python
+    Project Manager
+    */
+    
     // vscode
     "editor.detectIndentation": true,
     "editor.formatOnPaste": true,
@@ -16,9 +23,15 @@
         "**/.git": true,
         "**/.DS_Store": true,
         "**/__pycache__": true,
-        "**/**/*.pyc": true
+        "**/**/*.pyc": true,
+        // "boost*": true
+    },
+    
+    "files.watcherExclude": {
+        "external/": true
     },
 
     "python.jediEnabled": false,
     "git.autofetch": true,
+    "window.zoomLevel": -1,
 }
