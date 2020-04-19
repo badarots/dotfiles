@@ -1,0 +1,33 @@
+#!/bin/sh
+
+if [ -f "$1" ]; then
+    file="$1"
+elif [ -d "$1" ]; then
+    # random file from directory
+    cd "$1"
+    file="$(ls | shuf -n 1)"
+else
+    echo "Expecting a file or directory as argument" >&2
+    exit 1
+fi
+
+# Check if a file was found
+[ -z "$file" ] && echo "Folder $1 is empty" >&2 && exit 1
+
+# Get absolute path of file
+file="$(realpath "$file")"
+
+echo "Changing wallpaper to $file"
+
+qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
+    var allDesktops = desktops();
+    print (allDesktops);
+    for (i=0;i<allDesktops.length;i++) {{
+        d = allDesktops[i];
+        d.wallpaperPlugin = \"org.kde.image\";
+        d.currentConfigGroup = Array(\"Wallpaper\",
+                                     \"org.kde.image\",
+                                     \"General\");
+        d.writeConfig(\"Image\", \"file:///${file}\")
+    }}
+"
