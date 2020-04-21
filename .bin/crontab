@@ -1,5 +1,5 @@
 # Muda wallpaper
-@reboot ~/.bin/update_wallpaper
+@reboot /usr/bin/sleep 10; ~/.bin/update_wallpaper
 0 7 * * * ~/.bin/update_wallpaper
 0 16 * * * ~/.bin/update_wallpaper
 0 19 * * * ~/.bin/update_wallpaper
