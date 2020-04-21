@@ -1,0 +1,22 @@
+#!/bin/sh
+
+hour=$(date +%H)
+
+if [ $hour -lt 7 ]; then
+    wp=noite
+elif [ $hour -lt 16 ]; then
+    wp=dia
+elif [ $hour -lt 19 ]; then
+    wp=tarde
+else
+    wp=noite
+fi
+
+# É necessário enviar a variável DBUS_SESSION... para o comando pois o cron job não roda no ambiente do X11
+# https://wiki.archlinux.org/index.php/Cron#Running_X.org_server-based_applications
+
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+   DBUS_SESSION_BUS_ADDRESS='unix:path=/run/user/1000/bus' ~/.bin/kwallpaper ~/Imagens/wallpaper/$wp
+else
+    ~/.bin/kwallpaper ~/Imagens/wallpaper/$wp
+fi

@@ -1,9 +1,5 @@
-# É necessário enviar a variável DBUS... para o comando pois o cron job não roda no ambiente do X11
-# https://wiki.archlinux.org/index.php/Cron#Running_X.org_server-based_applications
-
 # Muda wallpaper
-0 10 * * * env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus/home/badaro/.bin/kwallpaper /home/badaro/Imagens/wallpaper/dia
-
-0 17 * * * env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/badaro/.bin/kwallpaper /home/badaro/Imagens/wallpaper/tarde
-
-30 18 * * * env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/badaro/.bin/kwallpaper /home/badaro/Imagens/wallpaper/noite
+@reboot ~/.bin/update_wallpaper
+0 7 * * * ~/.bin/update_wallpaper
+0 16 * * * ~/.bin/update_wallpaper
+0 19 * * * ~/.bin/update_wallpaper
