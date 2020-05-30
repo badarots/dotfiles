@@ -1,6 +1,9 @@
 export EDITOR=micro
 export VISUAL="$EDITOR"
 
+# export PATH="$PATH:$HOME/.local/paraview/bin"
+# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/.local/paraview/lib"
+
 alias l=ls
 alias lh='ls -lh'
 alias la='ls -alh'
